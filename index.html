@@ -1,12 +1,91 @@
+
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>ohmuraken GitHub Pages</title>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>OhMuraken</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/styles/normalize.css" />
+	<link rel="stylesheet" href="assets/styles/styles.css" />
 </head>
+
 <body>
-  <div class="container">
-    <p class="img"><img src="mylogo.png" alt="mylogo" /></p>
-  </div>
+	<div class="container1" >
+	<!-- Video Markup -->
+	<section class="masthead">
+		<video class="masthead-video" autoplay loop muted>
+			<!--
+			<source src="assets/images/dreamscapes.mp4" type="video/mp4">
+			
+			<source src="assets/videos/dreamscapes.webm" type="video/webm">
+			-->
+				</video>
+		<div class="masthead-overlay"></div>
+		<div class="masthead-arrow"></div>
+		<div class="contents"><h1>Hello<br>Mr.Tamada<span>From github.com/ohmuraken</span></h1><div>
+		<!--
+		<div class="container"><p class="img"><img src="mylogo.png" alt="mylogo" /></p></div>
+		-->
+		<a class="masthead-video-credit" href="http://vimeo.com/82495711" target="_blank">
+			<span>Video: Dreamscapes</span>
+			<span>by Jonathan Besler</span>
+		</a>
+	</section>
+	</div>
+<!--
+
+-->
+	<section class="content">
+		<div class="container">
+			<h2>Works</h2>
+			<ol>
+				<li><a href="http://till-release.net">Release;</a><br>I made Release web page fit with Smart Phone.</li>
+
+				<li><a href="http://sharefont.net">ShareFont</a><br>I implemented all.</li>
+		</div>
+		<br>
+		<div class="container">
+			<h2>Favorite Services</h2>
+			<ol>
+				<li><a href="www.tumblr.com/">Tumblr</a><br>Tumblr (stylized in its logo as tumblr.) is a microblogging platform and social networking website founded by David Karp and owned by Yahoo! Inc. The service allows users to post multimedia and other content to a short-form blog.(From Wikipedia)</li>
+
+				<li><a href="https://soundcloud.com/">SoundCloud</a><br>SoundCloud is an online audio distribution platform based in Berlin, Germany that enables its users to upload, record, promote and share their originally-created sounds. In July 2013, it had 40 million registered users and 200 million listeners.(From Wikipedia)</li>
+		</div>		
+	</section>
+
+
+
+	<footer>
+		<div class="container">
+			<center>
+			<hr />
+			<!--
+			<iframe src="http://ghbtns.com/github-btn.html?user=stefanerickson&repo=covervid&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130px" height="30px"></iframe>
+			<iframe src="http://ghbtns.com/github-btn.html?user=stefanerickson&repo=covervid&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="123px" height="30px"></iframe>
+			-->
+			<iframe src="http://ghbtns.com/github-btn.html?user=ohmuraken&type=follow&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="194px" height="30px"></iframe>
+			</center>
+		</div>
+	</footer>
+
+	<!-- Load Scripts -->
+
+	<!--<script src="jquery1_10_2.min.js"></script>-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="covervid.js"></script>
+	<script src="assets/scripts/scripts.js"></script>
+
+	<!-- Call CoverVid -->
+	<script type="text/javascript">
+		// If using jQuery
+			// $('.masthead-video').coverVid(1920, 1080);
+		// If not using jQuery (Native Javascript)
+			coverVid(document.querySelector('.masthead-video'), 1920, 1080);
+	</script>
+
 </body>
+
 </html>

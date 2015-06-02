@@ -1,25 +1,34 @@
-/**
- * Masthead
- * -------------------------------------------------------------------------- */
 html {
     -webkit-font-smoothing: antialiased;
 }
 
+div.headerArea {
+    position: fixed !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: gray;
+    color: #fff;
+}
 
+#slides {
+    display:none;
+}
 
-body { 
+body {
 
-    background-image: url("http://s169923.gridserver.com/images/SaltonEdge.jpg"); /* 蜈ｨ菴薙�閭梧勹逕ｻ蜒 */ 
+    background-image: url("http://s169923.gridserver.com/images/SaltonEdge.jpg");
     /*background-attachment:fixed*/
-    background-position: center center; 
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow: auto;
-    background-size: cover; 
+    background-size: cover;
     /*background-size:cover;*/
 }
 
-/*mylogo繧剃ｸ贋ｸ句ｷｦ蜿ｳ荳ｭ螟ｮ*/
 .container1 {
   margin:0;
   padding:0;
@@ -38,14 +47,10 @@ body {
 }
 
 table {
-  background-image: url("http://s169923.gridserver.com/images/SaltonEdge.jpg"); 
-  background-repeat: no-repeat;           
+  background-image: url("http://s169923.gridserver.com/images/SaltonEdge.jpg");
+  background-repeat: no-repeat;
   background-position: right bottom
 }
-
-
-
-
 
 
 .masthead {
@@ -194,39 +199,7 @@ ol li:nth-child(3):after {
 ol li:nth-child(4):after {
     content: '4';
 }
-code {
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    background: #f7f7f7;
-    padding: 4px;
-    border-radius: 6px;
-    font-size: 0.9em;
-}
-pre {
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 14px;
-    background: #f7f7f7;
-    padding: 20px;
-    border-radius: 10px;
-    line-height: 1.4;
-}
-pre .s {
-    color: #d14;
-}
-pre .na {
-    color: #008080;
-}
-pre .nt {
-    color: #000080;
-}
-pre .s {
-    color: #d14;
-}
-pre .nc {
-    color: #445588;
-}
-pre .m {
-    color: #009999;
-}
+
 .content {
     padding-top: 60px;
 }
@@ -234,6 +207,7 @@ pre .m {
     margin: auto;
     width: 720px;
 }
+
 footer {
     text-align: right;
     margin-top: 60px;

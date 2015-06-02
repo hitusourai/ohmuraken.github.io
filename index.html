@@ -1,91 +1,244 @@
-
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
+		<title>OhMuraken</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<link rel="stylesheet" href="assets/styles/normalize.css" />
+		<link rel="stylesheet" href="assets/styles/styles.css" />
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>OhMuraken</title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/styles/normalize.css" />
-	<link rel="stylesheet" href="assets/styles/styles.css" />
-</head>
+		<script type="text/javascript">
+			function browser_company_name() {
+				var userAgent = window.navigator.userAgent.toLowerCase();
+				if (userAgent.indexOf('opera') != -1) {
+					document.write("Opera Software");
+				} else if (userAgent.indexOf('msie') != -1) {
+					document.write("Microsoft");
+				} else if (userAgent.indexOf('chrome') != -1) {
+					document.write("Google");
+				} else if (userAgent.indexOf('safari') != -1) {
+					document.write("Apple");
+				} else if (userAgent.indexOf('firefox') != -1) {
+					document.write("Mozilla");
+				}
+			}
 
-<body>
-	<div class="container1" >
-	<!-- Video Markup -->
-	<section class="masthead">
-		<video class="masthead-video" autoplay loop muted>
-			<!--
-			<source src="assets/images/dreamscapes.mp4" type="video/mp4">
-			
-			<source src="assets/videos/dreamscapes.webm" type="video/webm">
-			-->
-				</video>
-		<div class="masthead-overlay"></div>
-		<div class="masthead-arrow"></div>
-		<div class="contents"><h1>Hello<br>Mr.Tamada<span>From github.com/ohmuraken</span></h1><div>
-		<!--
-		<div class="container"><p class="img"><img src="mylogo.png" alt="mylogo" /></p></div>
-		-->
-		<a class="masthead-video-credit" href="http://vimeo.com/82495711" target="_blank">
-			<span>Video: Dreamscapes</span>
-			<span>by Jonathan Besler</span>
-		</a>
-	</section>
-	</div>
-<!--
+			function get_locate() {
+				var userAgent = window.navigator.userAgent.toLowerCase();
+				if (userAgent.indexOf('opera') != -1) {
+					locate = new Array(59.956342, 10.764628);
+					return locate;
+				} else if (userAgent.indexOf('msie') != -1) {
+					locate = new Array(42.382394, -71.219858);
+					return locate;
+				} else if (userAgent.indexOf('chrome') != -1) {
+					locate = new Array(37.422, -122.084058);
+					return locate;
+				} else if (userAgent.indexOf('safari') != -1) {
+					locate = new Array(37.67985, -97.809562);
+					return locate;
+				} else if (userAgent.indexOf('firefox') != -1) {
+					locate = new Array(37.387305,  -122.060169);
+					return locate;
+				}
+			}
 
--->
-	<section class="content">
-		<div class="container">
-			<h2>Works</h2>
-			<ol>
-				<li><a href="http://till-release.net">Release;</a><br>I made Release web page fit with Smart Phone.</li>
+			function reverse_name() {
+				var name = document.name_form.input_name.value;
+				target = document.getElementById("output_name");
+				name = name.split(" ").reverse().join(" ");
+				target.innerText = "Maybe... Your Name: " + name;
+			}
 
-				<li><a href="http://sharefont.net">ShareFont</a><br>I implemented all.</li>
+			function hover() {
+				var response = confirm("Jump to ohmuraken's GitHub account?");
+				if (response == true) {
+					window.location.href = "http://github.com/ohmuraken";
+				} else if (response == false) {
+
+				}
+			}
+
+			function mousemove(event) {
+				var obj_x=document.getElementById("count_x");
+				var obj_y=document.getElementById("count_y");
+				obj_x = parseInt(event.clientX+1);
+				obj_y = parseInt(event.clientY+1);
+				document.getElementById("count_x").innerHTML = obj_x;
+				document.getElementById("count_y").innerHTML = obj_y;
+			}
+
+			google.maps.event.addDomListener(window, 'load', function() {
+				var map = document.getElementById("gmap");
+				locate = get_locate();
+				 var options = {
+					zoom: 16,
+					center: new google.maps.LatLng(locate[0], locate[1]),
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				new google.maps.Map(map, options);
+			});
+		</script>
+		<script>
+			$(function(){
+				$("#slides").slidesjs({
+					width: 940,
+					height: 528
+				});
+			});
+		</script>
+	</head>
+	<body onMouseMove="mousemove(event)">
+
+		<div class="container_head">
+			<section class="masthead">
+				<div class="masthead-overlay"></div>
+				<div class="contents"><h1>Hello<br>
+					<script type="text/javascript">
+						your_name = prompt("Please Input Your Name");
+						if (your_name.length == 0) {
+							document.write("Mr.Nakajima")
+						}else {
+							document.write(your_name);
+						}
+					</script>
+					<span>From github.com/ohmuraken</span></h1><div>
+					<div class="headerArea">
+						mouse postion_x: <span id="count_x">0</span>
+						, mouse postion_y: <span id="count_y">0</span>
+					</div>
+			</section>
 		</div>
-		<br>
-		<div class="container">
-			<h2>Favorite Services</h2>
-			<ol>
-				<li><a href="www.tumblr.com/">Tumblr</a><br>Tumblr (stylized in its logo as tumblr.) is a microblogging platform and social networking website founded by David Karp and owned by Yahoo! Inc. The service allows users to post multimedia and other content to a short-form blog.(From Wikipedia)</li>
+		<section class="content">
+			<div class="container">
+				<h2>Works</h2>
+				<ol>
+					<li><a href="http://till-release.net">Release;</a><br>I made Release web page fit with Smart Phone.</li>
+					<li><a href="http://sharefont.net">ShareFont</a><br>I implemented all.</li>
+				</ol>
+			</div>
+			<br>
+			<div class="container">
+				<h2>Favorite Services</h2>
+				<ol>
+					<li>
+						<a href="www.tumblr.com/">Tumblr</a><br>
+						Tumblr (stylized in its logo as tumblr.) is a microblogging platform and social networking website founded by David Karp and owned by Yahoo! Inc. The service allows users to post multimedia and other content to a short-form blog.(From Wikipedia)
+					</li>
 
-				<li><a href="https://soundcloud.com/">SoundCloud</a><br>SoundCloud is an online audio distribution platform based in Berlin, Germany that enables its users to upload, record, promote and share their originally-created sounds. In July 2013, it had 40 million registered users and 200 million listeners.(From Wikipedia)</li>
-		</div>		
-	</section>
+					<li>
+						<a href="https://soundcloud.com/">SoundCloud</a><br>
+						SoundCloud is an online audio distribution platform based in Berlin, Germany that enables its users to upload, record, promote and share their originally-created sounds. In July 2013, it had 40 million registered users and 200 million listeners.(From Wikipedia)
+					</li>
 
-
-
-	<footer>
-		<div class="container">
-			<center>
-			<hr />
-			<!--
-			<iframe src="http://ghbtns.com/github-btn.html?user=stefanerickson&repo=covervid&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="130px" height="30px"></iframe>
-			<iframe src="http://ghbtns.com/github-btn.html?user=stefanerickson&repo=covervid&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="123px" height="30px"></iframe>
-			-->
-			<iframe src="http://ghbtns.com/github-btn.html?user=ohmuraken&type=follow&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="194px" height="30px"></iframe>
-			</center>
-		</div>
-	</footer>
-
-	<!-- Load Scripts -->
-
-	<script src="assets/scripts/jquery1_10_2.min.js"></script>
-	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-	<script src="covervid.js"></script>
-	<script src="assets/scripts/scripts.js"></script>
-
-	<!-- Call CoverVid -->
-	<script type="text/javascript">
-		// If using jQuery
-			// $('.masthead-video').coverVid(1920, 1080);
-		// If not using jQuery (Native Javascript)
-			coverVid(document.querySelector('.masthead-video'), 1920, 1080);
-	</script>
-
-</body>
-
+					<li>
+						<a href="http://b.hatena.ne.jp/">はてなブックマーク</a><br>
+						ユーザーがウェブブラウザで「ブックマークレット」を起動するか、ブログやニュースサイトなどに設置された「はてなブックマークボタン」を押すと、記事のURLがブックマークとして保存される。任意で全角・半角100文字までのコメントやタグも付けることができ、複数のユーザーが登録することで、その記事に関するコメントやタグが蓄積されて行く。これを一覧表示すれば電子掲示板のように楽しむことが出来る。(From Wikipedia)
+					</li>
+				</ol>
+			</div>
+			<div class="container">
+				<h2>Browser</h2>
+				<ol>
+					<li>
+						<a>
+							<script type="text/javascript">
+								var userAgent = window.navigator.userAgent.toLowerCase();
+								if (userAgent.indexOf('opera') != -1) {
+									document.write("Opera");
+								} else if (userAgent.indexOf('msie') != -1) {
+										document.write("Internet Exploer");
+								} else if (userAgent.indexOf('chrome') != -1) {
+									document.write("Chrome");
+								} else if (userAgent.indexOf('safari') != -1) {
+									document.write("Safari");
+								} else if (userAgent.indexOf('firefox') != -1) {
+									document.write("FireFox");
+								} else {
+									document.write("Others");
+								}
+							</script>
+						</a><br>
+						Version:
+						<script type="text/javascript">document.write(navigator.appVersion);</script>
+					</li>
+					<li>
+						<a onload="browser_company_name()">
+							 <script type="text/javascript">
+								document.write("Your Browser is Powerd by ");
+								browser_company_name(userAgent);
+							</script>
+						</a><br>
+						<div id="gmap" style="width : 650px; height : 300px;"></div>
+					</li>
+				</ol>
+			</div>
+			<br>
+			<div class="container">
+				<h2>Birthday and Age</h2>
+				<ol>
+					<li>
+						<form name="form">
+							Year<input type="text" size="4" name="y" placeholder="2000">, Month
+							<input type="text" size="2" name="m" placeholder="1">, Day
+							<input type="text" size="2" name="d" placeholder="1">
+							<input type="button" value="Set" onclick="set();"><br>
+						</form>
+						<script type="text/javascript">
+							function set(){
+								now = new Date();
+								now_info = new Array(now.getFullYear(), now.getMonth(), now.getDay());
+								birth =  new Array(document.form.y.value, document.form.m.value, document.form.d.value);
+								your_age = now_info[0] - birth[0];
+								if (now_info[1] > birth[1]) {
+									your_age++;
+								} else if (now_info[1] == birth[1] && now_info[2] >= birth[2]) {
+									your_age++;
+								}
+								target = document.getElementById("output");
+								target.innerText = "Maybe... Your Age: " + your_age;
+							}
+						</script>
+						<div id="output"></div>
+					</li>
+				</ol>
+			</div>
+			<br>
+			<div class="container">
+					<h2>Go to ???</h2>
+					<ol>
+						<li>
+							<a onMouseOver="hover()">If you hovered mouse...</a><br>
+							Do you know ohmuraken's code ?
+						</li>
+					</ol>
+			</div>
+			<br>
+			<div class="container">
+					<h2>Please Input Your Name</h2>
+					<ol>
+						<li>
+							<a>My Name is Kenta Muramastu. What's your name ?</a><br>
+							<form name="name_form">
+								<input type="text" size="15" name="input_name" placeholder="Kenta Muramatsu">
+								<input type="button" onclick="reverse_name();" value="Input">
+								<br><span id="output_name"></span>
+							</form>
+						</li>
+					</ol>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<center>
+				<hr>
+				<iframe src="http://ghbtns.com/github-btn.html?user=ohmuraken&type=follow&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="194px" height="30px"></iframe>
+				</center>
+			</div>
+		</footer>
+		<script src="assets/scripts/jquery1_10_2.min.js"></script>
+		<script src="assets/scripts/scripts.js"></script>
+	</body>
 </html>
